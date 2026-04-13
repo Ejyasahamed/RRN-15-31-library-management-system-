@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In – Easy Library</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="auth-page">
+
+  <a href="../index.html" class="back-link">← Back to Home</a>
+
+  <div class="auth-card">
+    <div class="auth-logo">📚</div>
+    <h2 class="auth-title">Easy Library</h2>
+    <p class="auth-sub">Access your university's digital catalog</p>
+
+    <!-- Tab -->
+    <div class="auth-tabs">
+      <button class="tab-btn active" data-tab="student">Student</button>
+      <button class="tab-btn" data-tab="admin">Admin</button>
+    </div>
+
+    <div id="auth-form">
+      <div class="form-group">
+        <label>Academic Email</label>
+        <input type="email" id="email" placeholder="Enter your university email" />
+      </div>
+      <div class="form-group">
+        <div class="label-row">
+          <label>Password</label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+        <input type="password" id="password" placeholder="Enter your password" />
+      </div>
+      <div class="form-check">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Keep me logged in</label>
+      </div>
+      <div id="auth-error" class="error-msg hidden"></div>
+      <button class="btn btn-primary btn-full" id="login-btn">Log In as Student</button>
+      <p class="auth-footer">Don't have an account? <a href="#" id="register-link">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal hidden" id="register-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="close-modal">✕</button>
+      <h3>Create Account</h3>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="reg-name" placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label>Academic Email</label>
+        <input type="email" id="reg-email" placeholder="university@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="reg-password" placeholder="Create a password" />
+      </div>
+      <div id="reg-error" class="error-msg hidden"></div>
+      <button class="btn btn-primary btn-full" id="reg-btn">Register</button>
+    </div>
+  </div>
+  <div class="modal-backdrop hidden" id="modal-backdrop"></div>
+
+  <script src="../js/auth.js"></script>
+</body>
+</html>

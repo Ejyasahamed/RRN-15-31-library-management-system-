@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Books – Easy Library</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="app-page">
+
+  <nav class="app-nav">
+    <div class="nav-brand">
+      <div class="brand-icon sm">📚</div>
+      <span class="brand-name">Easy Library</span>
+    </div>
+    <div class="nav-right">
+      <span class="user-badge">👤 <span id="nav-username">Alex</span></span>
+      <button class="btn btn-danger-outline" id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <h1 class="page-title">My Books</h1>
+    <p id="books-count" class="books-count-label"></p>
+
+    <div class="mybooks-tabs">
+      <button class="tab-btn active" data-tab="issued">Currently Issued</button>
+      <button class="tab-btn" data-tab="history">History</button>
+    </div>
+
+    <div id="mybooks-list"></div>
+    <div id="history-list" class="hidden"></div>
+  </main>
+
+  <!-- Return Confirm Modal -->
+  <div class="modal hidden" id="return-modal">
+    <div class="modal-box small-modal">
+      <h3>Return Book</h3>
+      <p>Are you sure you want to return <strong id="return-book-title"></strong>?</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="cancel-return">Cancel</button>
+        <button class="btn btn-primary" id="confirm-return">Yes, Return</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop hidden" id="modal-backdrop"></div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="bnav-item">
+      <span>🏠</span><span>Home</span>
+    </a>
+    <a href="catalog.html" class="bnav-item">
+      <span>🔍</span><span>Search</span>
+    </a>
+    <a href="mybooks.html" class="bnav-item active">
+      <span>📚</span><span>My Books</span>
+    </a>
+  </nav>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/mybooks.js"></script>
+</body>
+</html>
