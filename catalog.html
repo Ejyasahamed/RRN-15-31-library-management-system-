@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Library – Easy Library</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="app-page">
+
+  <nav class="app-nav">
+    <div class="nav-brand">
+      <div class="brand-icon sm">📚</div>
+      <span class="brand-name">Easy Library</span>
+    </div>
+    <div class="nav-right">
+      <span class="user-badge">👤 <span id="nav-username">Alex</span></span>
+      <button class="btn btn-danger-outline" id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <h1 class="page-title">Search Library</h1>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Search by title, author, or ISBN..." />
+    </div>
+
+    <div class="category-tabs">
+      <button class="cat-btn active" data-cat="all">All Books</button>
+      <button class="cat-btn" data-cat="science">Science</button>
+      <button class="cat-btn" data-cat="fiction">Fiction</button>
+      <button class="cat-btn" data-cat="history">History</button>
+      <button class="cat-btn" data-cat="cs">CS & Engineering</button>
+    </div>
+
+    <div class="results-header">
+      <span id="results-count">SEARCH RESULTS (0)</span>
+      <div class="alpha-nav" id="alpha-nav"></div>
+    </div>
+
+    <div id="book-list" class="book-list"></div>
+  </main>
+
+  <!-- Book Detail Modal -->
+  <div class="modal hidden" id="book-modal">
+    <div class="modal-box book-modal-box">
+      <button class="modal-close" id="close-book-modal">✕</button>
+      <div class="book-detail-header">
+        <div class="book-detail-cover" id="modal-cover"></div>
+        <div>
+          <div class="book-detail-cat" id="modal-cat"></div>
+          <div class="book-detail-status" id="modal-status"></div>
+          <h2 id="modal-title"></h2>
+          <p class="modal-author" id="modal-author"></p>
+          <p class="modal-publisher" id="modal-publisher"></p>
+        </div>
+      </div>
+      <div class="book-meta-grid">
+        <div class="meta-item"><span class="meta-icon">📍</span><div><div class="meta-label">RACK</div><div class="meta-val" id="modal-rack"></div></div></div>
+        <div class="meta-item"><span class="meta-icon">📦</span><div><div class="meta-label">COPIES</div><div class="meta-val" id="modal-copies"></div></div></div>
+        <div class="meta-item"><span class="meta-icon">🌐</span><div><div class="meta-label">LANGUAGE</div><div class="meta-val" id="modal-lang"></div></div></div>
+        <div class="meta-item"><span class="meta-icon">⭐</span><div><div class="meta-label">RATING</div><div class="meta-val" id="modal-rating"></div></div></div>
+      </div>
+      <div class="about-book">
+        <h4>About this Book</h4>
+        <p id="modal-desc"></p>
+      </div>
+      <button class="btn btn-primary btn-full" id="modal-borrow-btn">📋 Request Book Issue</button>
+    </div>
+  </div>
+  <div class="modal-backdrop hidden" id="modal-backdrop"></div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="bnav-item">
+      <span>🏠</span><span>Home</span>
+    </a>
+    <a href="catalog.html" class="bnav-item active">
+      <span>🔍</span><span>Search</span>
+    </a>
+    <a href="mybooks.html" class="bnav-item">
+      <span>📚</span><span>My Books</span>
+    </a>
+  </nav>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/catalog.js"></script>
+</body>
+</html>
